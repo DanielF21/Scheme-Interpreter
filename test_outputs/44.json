@@ -1,0 +1,30 @@
+[
+  {
+    "ok": true,
+    "output": 4
+  },
+  {
+    "ok": true,
+    "output": 1
+  },
+  {
+    "ok": true,
+    "output": 0
+  },
+  {
+    "ok": false,
+    "type": "SchemeEvaluationError"
+  },
+  {
+    "ok": false,
+    "type": "SchemeEvaluationError"
+  },
+  {
+    "ok": true,
+    "output": 0
+  },
+  {
+    "ok": true,
+    "output": 0
+  }
+]

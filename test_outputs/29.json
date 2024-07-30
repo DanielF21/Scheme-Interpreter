@@ -1,0 +1,111 @@
+[
+  {
+    "ok": true,
+    "output": "SOMETHING"
+  },
+  {
+    "ok": true,
+    "output": 6
+  },
+  {
+    "ok": false,
+    "type": "SchemeSyntaxError",
+    "when": "parse"
+  },
+  {
+    "ok": false,
+    "type": "SchemeSyntaxError",
+    "when": "parse"
+  },
+  {
+    "ok": false,
+    "type": "SchemeNameError"
+  },
+  {
+    "ok": false,
+    "type": "SchemeSyntaxError",
+    "when": "parse"
+  },
+  {
+    "ok": false,
+    "type": "SchemeSyntaxError",
+    "when": "parse"
+  },
+  {
+    "ok": false,
+    "type": "SchemeNameError"
+  },
+  {
+    "ok": false,
+    "type": "SchemeNameError"
+  },
+  {
+    "ok": false,
+    "type": "SchemeNameError"
+  },
+  {
+    "ok": false,
+    "type": "SchemeSyntaxError",
+    "when": "parse"
+  },
+  {
+    "ok": false,
+    "type": "SchemeSyntaxError",
+    "when": "parse"
+  },
+  {
+    "ok": true,
+    "output": "SOMETHING"
+  },
+  {
+    "ok": false,
+    "type": "SchemeSyntaxError",
+    "when": "parse"
+  },
+  {
+    "ok": true,
+    "output": "SOMETHING"
+  },
+  {
+    "ok": false,
+    "type": "SchemeEvaluationError"
+  },
+  {
+    "ok": true,
+    "output": -7
+  },
+  {
+    "ok": false,
+    "type": "SchemeSyntaxError",
+    "when": "parse"
+  },
+  {
+    "ok": false,
+    "type": "SchemeSyntaxError",
+    "when": "parse"
+  },
+  {
+    "ok": true,
+    "output": "SOMETHING"
+  },
+  {
+    "ok": false,
+    "type": "SchemeSyntaxError",
+    "when": "parse"
+  },
+  {
+    "ok": false,
+    "type": "SchemeSyntaxError",
+    "when": "parse"
+  },
+  {
+    "ok": false,
+    "type": "SchemeSyntaxError",
+    "when": "parse"
+  },
+  {
+    "ok": false,
+    "type": "SchemeSyntaxError",
+    "when": "parse"
+  }
+]
