@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import scheme_interp
@@ -9,7 +9,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # In production, replace with your frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -25,15 +25,14 @@ async def startup_event():
     global global_frame
     global_frame = scheme_interp.Frame(scheme_interp.builtin_frame)
 
-@app.post("/scheme-interpreter")
-async def scheme_interpreter(scheme_input: SchemeInput):
+async def process_scheme_input(input_str: str):
     global global_frame
     
     old_stdout = sys.stdout
     sys.stdout = StringIO()
     
     try:
-        inp = scheme_input.input.strip()
+        inp = input_str.strip()
         if inp.lower() == "exit":
             return {"output": "bye bye!\n"}
 
@@ -60,8 +59,21 @@ async def scheme_interpreter(scheme_input: SchemeInput):
     finally:
         sys.stdout = old_stdout
 
+@app.post("/scheme-interpreter")
+async def scheme_interpreter(scheme_input: SchemeInput):
+    return await process_scheme_input(scheme_input.input)
+
+@app.post("/")
+async def root_post(request: Request):
+    try:
+        data = await request.json()
+        input_str = data.get('input', '')
+        return await process_scheme_input(input_str)
+    except Exception as e:
+        return {"output": f"Error processing request: {str(e)}\n"}
+
 @app.get("/")
-async def root():
+async def root_get():
     return {"message": "Scheme interpreter server is running"}
 
 if __name__ == "__main__":
